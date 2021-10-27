@@ -2,9 +2,9 @@ import React, { createContext } from "react";
 
 import useAuth from "./hooks/useAuth";
 
-const Context = createContext();
+const Context = createContext<{}>({});
 
-function AuthProvider({ children }) {
+const AuthProvider: React.FC = ({ children }) => {
   const { authenticated, loading, handleLogin, handleLogout } = useAuth();
 
   return (

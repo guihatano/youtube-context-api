@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Users from './pages/Users';
 
 function CustomRoute({ isPrivate = false, ...rest }) {
-  const { loading, authenticated } = useContext(Context);
+  const { loading, authenticated } = useContext(Context) as ContextType;
 
   if (loading) {
     return <h1>Loading...</h1>;
