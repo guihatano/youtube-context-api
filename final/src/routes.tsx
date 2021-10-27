@@ -6,7 +6,7 @@ import { Context } from './Context/AuthContext';
 import Login from './pages/Login';
 import Users from './pages/Users';
 
-function CustomRoute({ isPrivate, ...rest }) {
+function CustomRoute({ isPrivate = false, ...rest }) {
   const { loading, authenticated } = useContext(Context);
 
   if (loading) {
