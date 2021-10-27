@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 
-import api from '../api';
-import { Context } from '../Context/AuthContext';
+import api from "../api";
+import { Context } from "../Context/AuthContext";
 
 export default function Users() {
   const { handleLogout } = useContext(Context);
@@ -9,7 +9,7 @@ export default function Users() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await api.get('/users');
+      const { data } = await api.get("/users");
 
       setUsers(data);
     })();
@@ -19,11 +19,15 @@ export default function Users() {
     <>
       <ul>
         {users.map((user) => (
-          <li key={user.id}>{user.name} ({user.website})</li>
+          <li key={user.id}>
+            {user.name} ({user.website})
+          </li>
         ))}
       </ul>
 
-      <button type="button" onClick={handleLogout}>Sair</button>
+      <button type="button" onClick={handleLogout}>
+        Sair
+      </button>
     </>
   );
 }

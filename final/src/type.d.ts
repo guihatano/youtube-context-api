@@ -4,3 +4,9 @@ type ContextType = {
   handleLogin: () => Promise<void>,
   handleLogout: () => void,
 }
+
+type User = {
+  id: number,
+  name: string,
+  website: string,
+}
